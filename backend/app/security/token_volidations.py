@@ -33,7 +33,7 @@ def verify_token(credential: Credentials) -> None:
 
     try:
         verify_user = id_token.verify_oauth2_token(
-            credential.token, requests.Request(), credential.clientId)
+            credential.token, requests.Request(), GOOGLE_CLIENT_ID)
         logger.info(verify_user)
 
         userName: str = verify_user['name']
@@ -44,30 +44,6 @@ def verify_token(credential: Credentials) -> None:
             'email': UserEmail
         }
         return response_data
-    except Exception as e:
-        logger.info(str(e))
-        raise error_exception(
-            status=status.HTTP_401_UNAUTHORIZED, details="Unauthorized access")
-
-
-def get_refreshed_token(token):
-    request = requests.Request()
-    try:
-        # cred = credentials.Credentials.from_authorized_user_info(
-        #     {'id_token': token}
-        # )
-        # verify_user = id_token.verify_token(
-        #     token, requests.Request(), GOOGLE_CLIENT_ID)
-        # refresh_token = verify_user['sub']
-        # logger.info(cred)
-        cred = credentials.Credentials(
-            token
-        )
-
-        cred.refresh(request)
-        new_access_token = cred.id_token
-
-        return new_access_token
     except Exception as e:
         logger.info(str(e))
         raise error_exception(

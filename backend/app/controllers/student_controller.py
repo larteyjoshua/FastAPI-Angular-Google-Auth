@@ -1,9 +1,10 @@
 from typing import List
 from loguru import logger
-from app.models.schemas import Credentials, User, StudentList
-from app.security.token_volidations import validate_token, verify_token, get_refreshed_token
-from fastapi import APIRouter, Depends, Request
+from app.models.schemas import Credentials, User, StudentList, Secret
+from app.security.token_volidations import validate_token, verify_token
+from fastapi import APIRouter, Depends
 from app.services.students import generate_student_list
+from app.services.secrets import get_secrets
 
 
 student_router = APIRouter(prefix='/api')
@@ -26,7 +27,8 @@ async def verify_token_fn(data: Credentials) -> User:
     return details
 
 
-@student_router.post("/refresh_token")
-def refresh_token(id_token: str):
-    access_token = get_refreshed_token(id_token)
-    return {"access_token": access_token}
+@student_router.get("/secrets", response_model=Secret)
+async def get_secrets_data() -> Secret:
+    secret_data = await get_secrets()
+    logger.info(secret_data)
+    return secret_data

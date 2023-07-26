@@ -1,0 +1,45 @@
+backend/.env
+frontend/Angular-Google-Auth-App/src/app/environments
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+frontend/Angular-Google-Auth-App/dist
+frontend/Angular-Google-Auth-App/tmp
+/out-tsc
+frontend/Angular-Google-Auth-App/bazel-out
+
+# Node
+frontend/Angular-Google-Auth-App/node_modules
+frontend/Angular-Google-Auth-App/npm-debug.log
+frontend/Angular-Google-Auth-App/yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+frontend/Angular-Google-Auth-App/.angular/cache
+.sass-cache/
+frontend/Angular-Google-Auth-App/connect.lock
+/coverage
+frontend/Angular-Google-Auth-App/libpeerconnection.log
+testem.log
+frontend/Angular-Google-Auth-App/typings
+
+# System files
+.DS_Store
+Thumbs.db
+backend/**__pycache__

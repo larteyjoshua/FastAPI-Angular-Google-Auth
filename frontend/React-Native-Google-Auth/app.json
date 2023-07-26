@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "React-Native-Google-Auth",
+    "slug": "React-Native-Google-Auth",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "com.joshualartey.reactrativegoogleruth",
+    "icon": "./assets/appIcon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.joshualartey.ReactNativeGoogleAuth"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "de2f45e1-13dd-4f6b-9fc5-7bb0a86f93ac"
+      }
+    }
+  }
+}

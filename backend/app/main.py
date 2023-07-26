@@ -4,7 +4,7 @@ from app.controllers.student_controller import student_router
 
 app = FastAPI(title='FastAPI-Angular-Google-Auth')
 
-origins = ["http://localhost:4200", "http://127.0.0.1:4200"]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,

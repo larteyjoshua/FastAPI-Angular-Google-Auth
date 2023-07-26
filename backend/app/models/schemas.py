@@ -17,9 +17,15 @@ class StudentList(BaseModel):
 
 class Credentials(BaseModel):
     token: str
-    clientId: str
+    clientId: str = None
 
 
 class User(BaseModel):
     name: str
     email: str
+
+
+class Secret(BaseModel):
+    clientId: str
+    androidClientId: str
+    iosClientId: str
